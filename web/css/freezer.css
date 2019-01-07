@@ -1,0 +1,269 @@
+/*Стили для Шапки*/
+.freezerHeader {
+    background-color: rgb(199, 159, 122);
+    text-align: center;
+    font-size: 150%;
+    border:  1px solid  rgb(150, 119, 91); 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.freezerHeaderButton{
+    margin: 0px 10%;
+}
+/*Стили для запасов*/
+.freezerTable{
+    overflow: auto;
+    color: rgb(82, 67, 40);
+    width: 1000px;
+    margin-top: 4em;
+    border: 4px solid  rgb(82, 67, 40);
+    background-color: rgb(199, 159, 122);
+    margin-left: auto;
+    margin-right: auto;
+}
+.freezerTable :link{
+    color: rgb(82, 67, 40);
+
+}
+.freezerTable :visited{
+    color: rgb(82, 67, 40);
+
+}
+.freezerTable thead{
+    font-size: 140%;
+    color: rgb(82, 67, 40);
+
+}
+
+.freezerTable thead tr th{
+    text-align: center;
+}
+
+.freezerTdCount{
+    width: 9%;
+    text-align: center;
+}
+.freezerTd{
+    width: 22%;
+}
+.freezerTdbuttons{
+    width: 16%;
+}
+.freezerTdSerial{
+    width: 5%;
+    text-align: center;
+}
+.freezerSpaceTd{
+    width: 3%;
+    background-color: rgb(199, 159, 122);
+    border: 0px !important;
+}
+.freezerTable table .filters td input{
+    width: 100%;
+    border-radius: 12px;
+}
+.freezerTable tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+.freezerTable tbody td{
+    border: 1px solid;
+}
+
+.freezerTable tbody td:first-child{
+    border-right: 3px solid rgb(82, 67, 40);
+}
+.freezerTable thead tr th:first-child{
+    border-right: 3px solid rgb(82, 67, 40);
+}
+.freezerTable thead tr td:first-child{
+    border-right: 3px solid rgb(82, 67, 40);
+}
+.freezerTable > table > thead > tr:nth-child(1) > th:nth-child(4){
+    border-right: 3px solid rgb(82, 67, 40);
+}
+.freezerTable .filters > td:nth-child(4){
+    border-right: 3px solid rgb(82, 67, 40);
+}
+.freezerTable tbody td:nth-child(4){
+    border-right: 3px solid rgb(82, 67, 40);
+}
+.freezerTable thead .filters{
+    border-bottom: 3px solid rgb(82, 67, 40);
+}
+
+
+
+.FreezerControlFormText{
+    width:60%;
+    padding: 0%;
+}
+.FreezerControlFormButton{
+    width:20%;
+    padding: 0%;
+}
+/*Стили для добавления продуктов*/
+
+
+.productListForm{
+    margin-top: 20px;
+    border: 4px solid  rgb(82, 67, 40);
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: rgb(199, 159, 122);
+    color: rgb(82, 67, 40);
+
+    
+}
+
+.ui-autocomplete-input{
+    width: 66.66666667%;
+    /* box-sizing: border-box; */
+}
+
+.productListCount{
+    width: 23.3333333%;
+    /* box-sizing: border-box; */
+}
+
+.productListSubmit{
+    width: 10%;
+    /* box-sizing: border-box; */
+}
+
+.productListForm table{
+
+    width: 100%;
+}
+
+.productListForm .td0{
+    width: 33.33333334%;
+}
+
+.productListForm .td1{
+    width: 10%;
+}
+.productListForm .td2{
+    width: 23.3333333%;
+}
+
+.productListForm .td3{
+    width: 23.3333333%;
+}
+
+
+.productListForm .td4{
+    width: 10%;
+}
+
+.productListForm p{
+    padding-top: 15px;
+    text-align: center;
+    
+}
+
+.productListForm select{
+    width: 100%;
+    
+}
+
+
+.productListDelButton{
+    width:100%;
+}
+
+.productListForm table{
+    /* background-color: rgb(199, 159, 122); */
+    font-weight: 550;
+}
+
+.productList tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+
+/*Стили для справочника продуктов*/
+.productsTable{
+    color: burlywood;
+    float:left;
+    width: auto;
+    margin-left: 20px;
+    border: 1px solid;
+}
+
+
+
+
+.storageTable{
+    float:left;
+}
+
+.categoryTable{
+    color: indigo;
+    float:left;
+    width: auto;
+    margin-left: 20px;
+    border: 1px solid;
+}
+
+.productCategory{
+    color: royalblue;
+    float:left;
+    width: auto;
+    margin-left: 20px;
+    border: 1px solid;
+}
+
+
+
+@media (max-width: 1000px) {
+    /*Стили для Шапки*/
+    .freezerHeader {
+        font-size: 100%;
+    }
+    .freezerHeaderButton{
+        margin: 15px;
+    }
+    /*Стили для запасов*/
+    .freezerTable{
+        color: rgb(82, 67, 40);
+        width: 100%; 
+        margin-top: 4em;
+        border: 4px solid  rgb(82, 67, 40);
+        background-color: rgb(199, 159, 122);
+    }
+
+    .freezerTable thead{
+        font-size: 100%
+    }
+    .freezerSpaceTd{
+        display:none;
+    }
+    .freezerTable > table > thead > tr:nth-child(1) > th:nth-child(5){
+        display:none;
+    }
+    #w0 > table > thead > tr:nth-child(1) > th:nth-child(8){
+        display:none;   
+    }
+    #w0-filters > td:nth-child(7){
+        display:none; 
+    }
+    #w0-filters > td:nth-child(6){
+        display:none; 
+   }
+   /*Стили для добавления продуктов*/
+
+.productListForm{
+    width: auto;
+}
+
+
+
+
+
+
+}
+
+
