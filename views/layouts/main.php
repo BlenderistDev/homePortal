@@ -26,7 +26,8 @@ AppAsset::register($this);
 <div class="header">
 <?php
     $header_links=[
-        'Запасы'=>'/basic/web/index.php?r=freezer/index'
+        'Запасы'=>'/basic/web/index.php?r=freezer/index',
+        'Животные'=>'/basic/web/index.php?r=animal/index',
     ];
     foreach($header_links as $key => $value){
         $str='<span><a href="'.$value.'">'.$key.'</a></span>';

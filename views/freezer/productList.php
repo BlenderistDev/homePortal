@@ -12,7 +12,7 @@ function makeSelect($array,$name = "select",$text = ""){
     $str .= "</select>";
     return $str;
 }
-
+$productList = array_values($productList);
 $autocomplete = AutoComplete::widget([
     'name' => 'productListName',
     'clientOptions' => [
@@ -29,7 +29,7 @@ if (isset($productArray[0])){
     foreach($productArray as $key => $value){
         $str.="<tr>";
         // $value[1]="<input type=\"text\" size=\"1\" name=\"$value[0]\" value =\"$value[1]\">";
-        $delButton = "<button type=\"submit\" name=\"del\" value = \"$key\" class = \"productListDelButton\">-</button>";
+        $delButton = "<button type=\"submit\" name=\"del\" value = \"$key\" class = \"productListDelButton\">-</button><button type=\"submit\" name=\"delAll\" value = \"$key\" class = \"productListDelButton\">del</button>";
         if (count($value)==4){
             $str .= "<td class =\"td0\">$value[0]</td><td class =\"td1\">$value[1]</td><td class =\"td2\">$value[2]</td><td class =\"td3\">$value[3]</td><td class =\"td4\">$delButton</td>";
         }

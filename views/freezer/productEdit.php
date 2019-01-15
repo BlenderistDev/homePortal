@@ -16,6 +16,7 @@ $form = ActiveForm::begin([
 ]);
 $model->productName = $productName;
 $model->productCategory = $categoryName;
+$model->productStorage = $storageName;
 $model->id = $id;
 print $form->field($model, 'productName')->label("Название продукта");
 print $form->field($model, 'productCategory')->label("Категория")->dropDownList($categoryList);

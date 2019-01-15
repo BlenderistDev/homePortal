@@ -24,7 +24,7 @@ class FreezerSearch extends Freezer
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 10,
+                'pageSize' => 25,
             ],
         ]);
         $dataProvider->sort->attributes['name'] = [

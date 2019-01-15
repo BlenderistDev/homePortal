@@ -11,7 +11,7 @@ class Freezer extends ActiveRecord
     public function rules()
     {
         return [
-            [['product_id','product_count'], 'integer'],
+            [['product_id',], 'integer'],
             [['name','categoryName'], 'safe'],
         ];
     }
@@ -61,6 +61,7 @@ class Freezer extends ActiveRecord
     }
     private function updateAddProduct($count){
         $this->product_count+=$count;
+        // var_dump($this);
         $this->save();
     }
     private static function addProduct(string $name, int $count){
@@ -70,7 +71,7 @@ class Freezer extends ActiveRecord
         $freezer->product_count = $count;
         $freezer->save();
     }
-    private function removeProduct(int $count){
+    private function removeProduct($count){
         $freezer_count = $this->product_count;
         if ($count >= $freezer_count){
             $this->delete();

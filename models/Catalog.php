@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 
 class Catalog extends ActiveRecord
 {
-    public function getList(){
+    public static function getList(){
         $list =[];
         $query = static::find()
         ->select('name')
@@ -68,7 +68,12 @@ class Catalog extends ActiveRecord
         ->where(['name'=>$name])
         ->select('id')
         ->one();
-        return $obj->id;
+        if (isset($obj->id)){
+            return $obj->id;
+        }
+        else{
+            return false;
+        }
     }
     public static function getName($id){
         $name = static::find()

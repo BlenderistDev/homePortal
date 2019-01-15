@@ -72,7 +72,7 @@ class FreezerController extends Controller
             'category'=>$post['productCategory'],
             'storage'=>$post['productStorage']
         ]);
-        return $this->redirect('@web/index.php?r=freezer/catalogs');        
+        return $this->redirect($_SERVER['HTTP_REFERER']);     
     }
     public function actionProductEdit()
     {
@@ -82,7 +82,7 @@ class FreezerController extends Controller
             'id'=> $post['id'],
             'category' => $post['productCategory'],
             'storage' => $post['productStorage']]);
-        return $this->redirect('@web/index.php?r=freezer/catalogs'); 
+            return $this->redirect($_SERVER['HTTP_REFERER']);
         
     }
     public function actionControlform()
@@ -90,35 +90,35 @@ class FreezerController extends Controller
         $request = Yii::$app->request;
         $post=$request->post();
         Freezer::controlForm($post);
-        return $this->redirect('@web/index.php?r=freezer/catalogs'); 
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
     public function actionCategoryAdd()
     {
         $request = Yii::$app->request;
         $post=$request->post()['FreezerAddForm'];
         ProductCategory::Add($post['productCategory']);
-        return $this->redirect('@web/index.php?r=freezer/catalogs'); 
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
     public function actionCategoryControlForm()
     {
         $request = Yii::$app->request;
         $post=$request->post()['FreezerAddForm'];
         ProductCategory::edit($post['productCategory'],$post['id']);
-        return $this->redirect('@web/index.php?r=freezer/catalogs'); 
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
     public function actionStorageAdd()
     {
         $request = Yii::$app->request;
         $post=$request->post()['FreezerAddForm'];
         ProductStorage::add($post['name']);
-        return $this->redirect('@web/index.php?r=freezer/catalogs'); 
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
     public function actionStorageEdit()
     {
         $request = Yii::$app->request;
         $post=$request->post()['FreezerAddForm'];
         ProductStorage::edit($post['name'],$post['id']);
-        return $this->redirect('@web/index.php?r=freezer/catalogs'); 
+        return $this->redirect($_SERVER['HTTP_REFERER']); 
     }
 
     public function actionProductList()
@@ -132,6 +132,9 @@ class FreezerController extends Controller
         if (isset($post['del'])){
             $productStr = Products::removeFromProductList($productList,$post['del']);
         }
+        if (isset($post['delAll'])){
+            $productStr = Products::removeFromProductListAll($productList,$post['delAll']);
+        }
         $productStr;
         if ((isset($post['act'])) && ($post['act']==="addToFreezer")){
             $productStr = Products::checkProductList($productList,$post);
@@ -143,7 +146,7 @@ class FreezerController extends Controller
             'name' => 'productList',
             'value' => $productStr,
         ]));
-        return $this->redirect('@web/index.php?r=freezer/index'); 
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
 }
 

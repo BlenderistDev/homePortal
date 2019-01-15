@@ -1,0 +1,53 @@
+/*Стили для Шапки*/
+.animalHeader {
+    background-color: rgb(199, 159, 122);
+    text-align: center;
+    font-size: 150%;
+    border:  1px solid  rgb(150, 119, 91); 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.animalHeaderButton{
+    margin: 0px 10%;
+}
+/* Стили таблиц запасов */
+.animalIndexContent{
+}
+.animalBlock{
+    width: auto;
+    float:left;
+    margin: 10px;
+    border: 4px solid  rgb(82, 67, 40);
+}
+.animalBlockHeader{
+    text-align: center;
+    font-size: 130%;
+    font-weight: 600;
+}
+
+.animalBlock .ui-autocomplete-input{
+    width: 70%;
+}
+
+.animalBlock .addCount{
+    width: 20%;
+}
+.animalBlock .submit{
+    width: 10%;
+}
+
+
+
+/* Стили справочников */
+.animalTable{
+    width: auto;
+    float:left;
+}
+.foodTable{
+    width: auto;
+    float:left;
+}
+.consumablesTable{
+    width: auto;
+    float:left;
+}

@@ -15,6 +15,8 @@ class FreezerAddForm extends Freezer{
     public $submit;
     public $list;
     public $productStorage;
+    public $animal;
+
 
     public function rules()
     {

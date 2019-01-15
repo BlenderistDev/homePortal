@@ -2,24 +2,30 @@
 
 use yii\grid\GridView;
 
-$addForm = $this->render('categoryAdd',[
+$addForm = $this->render('animalAdd',[
     'model'=>$model,
 ]);
 print GridView::widget([
-    'dataProvider'=>$productCategoryDataProvider,
-    'options' => ['class'=>'categoryTable'],
+    'dataProvider'=>$AnimalDataProvider,
+    'options' => ['class'=>'animalTable'],
     'columns' => [
+        [ 
+            
+            'header' => '№',
+            'class' => 'yii\grid\SerialColumn',
+            'contentOptions' =>['class' => 'freezerTdSerial'],
+        ],
         'name',
         [
             'class' => 'yii\grid\ActionColumn',
             'header' => $addForm,
-            'controller'=>'freezer',
+            'controller'=>'animal',
             'template'=>'{editCategory}',
             'buttons'=>[
                 'editCategory' => function ($url, $mod, $key) use ($model) {
-                    return $this->render('categoryEdit',[
+                    return $this->render('animalEdit',[
                         'id'=>$key,
-                        'categoryName'=>$mod->name,
+                        'animalName'=>$mod->name,
                         'model'=>$model,
                     ]);
                 }

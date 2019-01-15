@@ -15,7 +15,7 @@ class Products extends Catalog
         return [
             [['id'], 'integer'],
             [['name'], 'string'],
-            [['id','name','category_id','categoryName'],'safe'],
+            [['id','name','category_id'],'safe'],
         ];
     }  
     public function getCategory()
@@ -169,6 +169,12 @@ class Products extends Catalog
         if($productList[$id][1]===0){
             unset($productList[$id]);
         }
+        return self::implodeProductArray($productList);
+    }
+    public static function removeFromProductListAll($productStr,$id)
+    {
+        $productList = self::explodeProductArray($productStr);
+        unset($productList[$id]);
         return self::implodeProductArray($productList);
     }
 }

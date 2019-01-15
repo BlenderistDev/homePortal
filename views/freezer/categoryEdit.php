@@ -2,7 +2,7 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\bootstrap\Modal;
-use app\models\FreezerAddForm;
+
 
 Modal::begin([
     'header' => '<h2>Изменение категории</h2>',

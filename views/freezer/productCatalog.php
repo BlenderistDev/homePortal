@@ -2,6 +2,7 @@
 
 use yii\grid\GridView;
 use app\models\ProductCategory;
+use app\models\ProductStorage;
 
 $productAddForm = $this->render('productAdd',[
     'model'=>$model,
@@ -51,6 +52,7 @@ print GridView::widget([
                         'id'=>$key,
                         'productName'=>$mod->name,
                         'categoryName'=>ProductCategory::getName($mod->category_id),
+                        'storageName'=>ProductStorage::getName($mod->storage_id),
                     ]);
                 }
             ],

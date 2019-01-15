@@ -22,6 +22,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/freezer.css',
+        'css/animal.css',
     ];
     public $js = [
         'js/addToFreezerForm.js'
